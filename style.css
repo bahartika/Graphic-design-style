@@ -21,29 +21,48 @@ h2 {
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "MORF" 15, "SHLN" 50;
-  text-align: center;
 }
 
-h1.title {
+h1 {
   font-size: 6rem;
 }
 
 h2 {
+  text-align: center;
   font-size: 3rem;
   padding-bottom: 3rem;
 }
 
 header {
   height: 90vh;
-  background-image: url("./assets/jumbotron.png");
-  background-size: cover;
-  background-position: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  background-color: #c62368;
 }
 
-/* Navigation */
+header div.title{
+  width: 75%;
+  gap: 3rem;
+  align-items: center;
+}
+
+div.title div {
+  text-align: left;
+}
+
+header div.wave {
+  position: absolute;
+  width: 100%;
+  bottom: -10rem;
+}
+
+header div.wave img {
+  width: 100%;
+}
+
+/* Navbar */
 nav {
   background: linear-gradient(180deg, hsla(348, 88%, 66%, 1) 0%, hsla(36, 89%, 68%, 1) 99%);
   padding: 0 15rem;
@@ -76,7 +95,7 @@ ul li a:hover {
 
 /*  Main */
 main {
-  margin: 0;
+  margin: 8rem 0 0 0;
   width: 100%;
   color: #191970;
   position: relative;
@@ -120,4 +139,144 @@ img.sample:hover {
 
 .border {
   border: 2px solid;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 3;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -7px;
+  top: -5px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:last-child {
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: rgb(245, 245, 245);
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:last-child {
+  background-color: rgb(245, 245, 245);
+  transform: rotate(-45deg) translate(1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+footer{
+  background-color: #c62368;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  color: #f1ebca;
+  font-style: italic;
+}
+
+/* Tampilan pada Tablet */
+@media screen and (max-width: 850px) {
+  body {
+    font-size: 12px;
+  }
+
+  .image img {
+    width: 100%;
+  }
+
+  aside {
+    width: auto;
+  }
+
+  
+  /* Tampilan pada Phone */
+  @media screen and (max-width: 576px) {
+    body {
+      overflow-x: hidden;
+      width: 100vw;
+    }
+
+    section > h2{
+      margin-top: 2rem;
+    }
+
+    h2 + div {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 2rem;
+
+    }
+
+    /* Mengambil section ganjil supaya image berada di bawah judul */
+    section:nth-child(odd) h2 + div{
+      flex-direction: column;
+    }
+  
+    header {
+    height: 100vh;
+    /* padding: 0 1rem; */
+  }
+
+  main section {
+    padding: 0;
+    border: 2px solid;
+    width: 100%;
+  }
+
+  main.p-2rem{
+    padding: 0 2rem;
+  }
+
+  nav {
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    position: sticky;
+  }
+
+  /* Memunculkan hamburger menu */
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: purple;
+    z-index: 1;
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  nav ul.slide {
+    opacity: 1;
+  }
 }
