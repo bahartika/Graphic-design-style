@@ -24,7 +24,7 @@ h2 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 h2 {
@@ -42,20 +42,35 @@ header {
   background-color: #c62368;
 }
 
-header div.title{
-  width: 75%;
+header div.title {
+  width: 80%;
   gap: 3rem;
   align-items: center;
+  text-align: left;
 }
 
-div.title div {
-  text-align: left;
+header div.title img {
+  width: 400px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.4));
+  animation: moveUpDown 2s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    /* transform: translateY(0); */
+    transform: rotate(-5deg);
+  }
+  50% {
+    /* transform: translateY(20px); */
+    transform: rotate(5deg);
+  }
 }
 
 header div.wave {
   position: absolute;
   width: 100%;
-  bottom: -10rem;
+  bottom: -11rem;
 }
 
 header div.wave img {
@@ -81,7 +96,7 @@ ul > li {
 
 ul li a {
   text-decoration: none;
-  color: white;
+  color: #f1ebca;
   transition: 400ms;
   font-weight: 500;
   padding: 5px 8px;
@@ -94,11 +109,10 @@ ul li a:hover {
 }
 
 /*  Main */
-main {
-  margin: 8rem 0 0 0;
+main.first {
+  margin: 10rem 0 0 0;
   width: 100%;
   color: #191970;
-  position: relative;
 }
 
 main section {
@@ -188,13 +202,76 @@ img.sample:hover {
   transform: scale(0);
 }
 
-footer{
+main:has(aside) {
+  padding: 0 10rem;
+}
+/* section last start */
+section.last {
+  background-image: linear-gradient(-45deg, darkblue, darkorchid);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+  color: #f1ebca;
+}
+
+section.last h2 {
+  padding: 1rem 0;
+}
+
+section.last dd {
+  font-weight: 200;
+  margin-bottom: 8px;
+}
+/* section last end */
+
+/* Aside Start */
+aside {
+  font-size: 12px;
+  border: 2px solid hsla(348, 88%, 66%, 1);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35%;
+}
+
+aside .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  filter: drop-shadow(4px 4px 10px 0 rgba(0, 0, 0, 0.8));
+}
+
+aside h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact img {
+  width: 30px;
+  margin: 0 0.5rem;
+}
+/* Aside End */
+
+footer {
   background-color: #c62368;
   text-align: center;
   margin-top: 1rem;
   padding: 1rem 0;
   color: #f1ebca;
-  font-style: italic;
 }
 
 /* Tampilan pada Tablet */
@@ -210,50 +287,69 @@ footer{
   aside {
     width: auto;
   }
+}
 
-  
-  /* Tampilan pada Phone */
-  @media screen and (max-width: 576px) {
-    body {
-      overflow-x: hidden;
-      width: 100vw;
-    }
+/* Tampilan pada Phone */
+@media screen and (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+  }
 
-    section > h2{
-      margin-top: 2rem;
-    }
+  section > h2 {
+    margin-top: 2rem;
+  }
 
-    h2 + div {
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 2rem;
+  h2 + div {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
 
-    }
+  h1 {
+    font-size: 4rem;
+    line-height: 0.9;
+    margin-bottom: 1rem;
+  }
 
-    /* Mengambil section ganjil supaya image berada di bawah judul */
-    section:nth-child(odd) h2 + div{
-      flex-direction: column;
-    }
-  
-    header {
+  header div.title {
+    flex-direction: column;
+  }
+
+  header div.title img {
+    width: 300px;
+  }
+
+  div.title div,
+  div.title p {
+    text-align: center;
+  }
+
+  header div.wave {
+    bottom: -4rem;
+  }
+
+  /* Mengambil section ganjil supaya image berada di bawah judul */
+  section:nth-child(odd) h2 + div {
+    flex-direction: column;
+  }
+
+  header {
     height: 100vh;
-    /* padding: 0 1rem; */
   }
 
   main section {
     padding: 0;
-    border: 2px solid;
     width: 100%;
   }
 
-  main.p-2rem{
+  main.p-2rem {
     padding: 0 2rem;
   }
 
   nav {
     justify-content: space-between;
     padding: 1rem 1.5rem;
-    position: sticky;
   }
 
   /* Memunculkan hamburger menu */
@@ -278,5 +374,17 @@ footer{
 
   nav ul.slide {
     opacity: 1;
+  }
+
+  main:has(aside) {
+    flex-direction: column;
+    padding: 0 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  section.last h2 {
+    padding-top: 0;
   }
 }
