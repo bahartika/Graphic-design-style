@@ -67,6 +67,15 @@ header div.title img {
   }
 }
 
+header p {
+  background-image: linear-gradient(-45deg, darkblue, darkorchid);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem 0 1rem 0;
+  color: #f1ebca;
+  margin-top: 1rem;
+}
+
 header div.wave {
   position: absolute;
   width: 100%;
@@ -212,16 +221,34 @@ section.last {
   padding: 1rem 2rem;
   margin: 0 1rem;
   color: #f1ebca;
+  text-align: justify;
 }
 
 section.last h2 {
   padding: 1rem 0;
 }
-
-section.last dd {
-  font-weight: 200;
-  margin-bottom: 8px;
+section.last h2 + p {
+  text-indent: 1rem;
 }
+
+/* Gaya untuk Definition List */
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+/* Gaya untuk Definition Term */
+dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Gaya untuk Definition Description */
+dd {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
 /* section last end */
 
 /* Aside Start */
@@ -263,6 +290,12 @@ aside h2 {
 .contact img {
   width: 30px;
   margin: 0 0.5rem;
+  transition: all 400ms;
+}
+
+.contact img:hover {
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+  transform: translateX(-0.2rem) translateY(-0.2rem);
 }
 /* Aside End */
 
@@ -366,7 +399,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: purple;
+    background-image: linear-gradient(-45deg, darkblue, darkorchid);
     z-index: 1;
     transition: all 0.5s;
     opacity: 0;
@@ -386,5 +419,10 @@ footer {
 
   section.last h2 {
     padding-top: 0;
+  }
+
+  .contact {
+    flex-direction: row;
+    justify-content: center;
   }
 }
