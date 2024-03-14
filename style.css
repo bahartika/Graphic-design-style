@@ -128,6 +128,12 @@ main section {
   padding: 4rem 8rem;
   place-items: center;
   justify-content: center;
+  text-indent: 1rem;
+}
+
+main section div.flex {
+  justify-content: center;
+  align-items: center;
 }
 
 p {
@@ -254,14 +260,14 @@ dd {
 /* Aside Start */
 aside {
   font-size: 12px;
-  border: 2px solid hsla(348, 88%, 66%, 1);
+  border: 2px solid #f55c7b;
   border-radius: 1rem;
   padding: 1rem;
   display: flex;
   text-align: justify;
   flex-direction: column;
   justify-content: space-between;
-  width: 35%;
+  width: 40%;
 }
 
 aside .top {
@@ -295,16 +301,29 @@ aside h2 {
 
 .contact img:hover {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
-  transform: translateX(-0.2rem) translateY(-0.2rem);
+  transform: scale(1.2);
 }
 /* Aside End */
 
 footer {
   background-color: #c62368;
-  text-align: center;
-  margin-top: 1rem;
-  padding: 1rem 0;
+  margin-top: 3rem;
+  padding: 1.5rem 0 1rem 0;
   color: #f1ebca;
+  justify-content: center;
+  position: relative;
+}
+
+footer a {
+  position: absolute;
+  top: -30px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+footer a:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.4));
 }
 
 /* Tampilan pada Tablet */
@@ -313,12 +332,39 @@ footer {
     font-size: 12px;
   }
 
+  header div.title {
+    flex-direction: column;
+  }
+
+  div.title div,
+  div.title p {
+    text-align: center;
+  }
+
+  header div.wave {
+    bottom: -4rem;
+  }
+
   .image img {
     width: 100%;
   }
 
+  main section {
+    padding: 1rem 0;
+    place-items: center;
+    justify-content: center;
+  }
+
+  main:has(aside) {
+    flex-direction: column;
+    padding: 0 5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
   aside {
-    width: auto;
+    width: 50%;
   }
 }
 
@@ -339,23 +385,19 @@ footer {
     gap: 2rem;
   }
 
+  div.title div,
+  div.title p {
+    text-align: center;
+  }
+
   h1 {
     font-size: 4rem;
     line-height: 0.9;
     margin-bottom: 1rem;
   }
 
-  header div.title {
-    flex-direction: column;
-  }
-
   header div.title img {
     width: 300px;
-  }
-
-  div.title div,
-  div.title p {
-    text-align: center;
   }
 
   header div.wave {
@@ -399,7 +441,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-image: linear-gradient(-45deg, darkblue, darkorchid);
+    background-image: linear-gradient(-45deg, #00008b, #9932cc);
     z-index: 1;
     transition: all 0.5s;
     opacity: 0;
@@ -424,5 +466,9 @@ footer {
   .contact {
     flex-direction: row;
     justify-content: center;
+  }
+
+  aside {
+    width: auto;
   }
 }
