@@ -88,7 +88,7 @@ header div.wave img {
 }
 
 /* Navbar */
-nav {
+header div.flex:not(.title) {
   background: linear-gradient(180deg, hsla(348, 88%, 66%, 1) 0%, hsla(36, 89%, 68%, 1) 99%);
   padding: 0 15rem;
   justify-content: space-between;
@@ -332,7 +332,7 @@ footer a:hover {
     width: 100vw;
   }
 
-  nav {
+  header div.flex:not(.title) {
     padding: 0 8rem;
   }
 
@@ -421,7 +421,7 @@ footer a:hover {
     padding: 0 2rem;
   }
 
-  nav {
+  header div.flex:not(.title) {
     justify-content: space-between;
     padding: 1rem 1.5rem;
   }
