@@ -43,6 +43,7 @@ header {
 }
 
 header div.title {
+  margin: 4rem auto 0;
   width: 80%;
   gap: 3rem;
   align-items: center;
@@ -92,10 +93,8 @@ nav {
   padding: 0 15rem;
   justify-content: space-between;
   place-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
   box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 ul > li {
@@ -119,7 +118,7 @@ ul li a:hover {
 
 /*  Main */
 main.first {
-  margin: 10rem 0 0 0;
+  margin: 8rem 0 0 0;
   width: 100%;
   color: #191970;
 }
@@ -330,6 +329,11 @@ footer a:hover {
 @media screen and (max-width: 850px) {
   body {
     font-size: 12px;
+    width: 100vw;
+  }
+
+  nav {
+    padding: 0 8rem;
   }
 
   header div.title {
@@ -342,11 +346,7 @@ footer a:hover {
   }
 
   header div.wave {
-    bottom: -4rem;
-  }
-
-  .image img {
-    width: 100%;
+    bottom: -6rem;
   }
 
   main section {
@@ -371,7 +371,6 @@ footer a:hover {
 /* Tampilan pada Phone */
 @media screen and (max-width: 576px) {
   body {
-    overflow-x: hidden;
     width: 100vw;
   }
 
@@ -391,13 +390,13 @@ footer a:hover {
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 0.9;
     margin-bottom: 1rem;
   }
 
   header div.title img {
-    width: 300px;
+    width: 250px;
   }
 
   header div.wave {
