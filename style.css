@@ -216,7 +216,7 @@ img.sample:hover {
   transform: scale(0);
 }
 
-main:has(aside) {
+article:has(aside) {
   padding: 0 10rem;
 }
 /* section last start */
@@ -355,7 +355,7 @@ footer a:hover {
     justify-content: center;
   }
 
-  main:has(aside) {
+  article:has(aside) {
     flex-direction: column;
     padding: 0 5rem;
     align-items: center;
@@ -450,7 +450,7 @@ footer a:hover {
     opacity: 1;
   }
 
-  main:has(aside) {
+  article:has(aside) {
     flex-direction: column;
     padding: 0 1.5rem;
     align-items: center;
@@ -460,6 +460,7 @@ footer a:hover {
 
   section.last h2 {
     padding-top: 0;
+    font-size: 2.5rem;
   }
 
   .contact {
